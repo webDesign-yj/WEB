@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>GradientsCharts</title>
+  <style>
+/*reset*/
+html, body  { width: 100%; height: 100%; }
+*           { padding:0; margin:0; }
+body        { overflow: hidden; font-family:'malgungothic'; font-weight:200; padding:0; margin:0; }
+ul,ol,li    { list-style:none; }
+table       { border-collapse:collapse; }
+input, select		{ outline:none; }
+select option		{ color:#333; }
+input.focus, select.focus		{ outline:inherit; }
+
+/* Chrome, Safari용 스크롤 바 */
+::-webkit-scrollbar {width:3px; height:3px; border:3px solid #5e5e5e; border-radius:0px; }
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {display:block; height:10px; background:#5e5e5e; border-radius:0px;}
+::-webkit-scrollbar-track {background:#5e5e5e; -webkit-border-radius:0px; border-radius:10px;}
+::-webkit-scrollbar-thumb {height:50px; width:50px; background:#bfbfbf; -webkit-border-radius:0px; border-radius:0px;}
+
+  .parkingSituation_new                    	{ background:rgba(33,33,43,0.9); width:100%; overflow:hidden; margin-top:1vw; padding:5vw 4vw 4vw; box-sizing:border-box; box-shadow:0 5px 10px 0 #000; border-radius:0.8vw; }
+.parkingSituation_new .tit           		{ width:100%; display:inline-block; }
+.parkingSituation_new .tit strong    		{ font-size:4.5vw; font-weight:200; float:left; color:#fff; }
+.barList							{  }
+.barList li							{ width:100%; padding:3vw 0; }
+.barList li .top					{ width:100%; display:inline-block; background:none; }
+.barList li .top .left				{ float:left; }
+.barList li .top .left em			{ color:#a7a6ad; font-style:normal; font-size:3.2vw; width:16vw; display:inline-block; text-align:left; }
+.barList li .top .left strong		{ font-size:3.8vw; font-family:'SegoeUI'; font-weight:200; }
+.barList li:nth-child(1) .top .left strong		{ color:#7676d6; }
+.barList li:nth-child(2) .top .left strong		{ color:#416cb3; }
+.barList li:nth-child(3) .top .left strong		{ color:#ff781d; }
+.barList li:nth-child(4) .top .left strong		{ color:#50b7ea; }
+.barList li:nth-child(5) .top .left strong		{ color:#e65cb0; }
+.barList li:nth-child(6) .top .left strong		{ color:#6ebd44; }
+.barList li .top .right				{ float:right; text-align:right; }
+.barList li .top .right em			{ color:#a7a6ad; font-style:normal; font-size:3.2vw; }
+.barList li .top .right strong		{ color:#fff; font-size:3.8vw; font-family:'SegoeUI'; min-width:14vw; display:inline-block; }
+.barList li .bar					{ width:100%; height:2.4vw; border-radius:2vw; background:url(barBg.png) 0 0 repeat; position:relative; overflow:hidden; }
+.barList li .bar span				{ position:absolute; top:0; left:0; height:100%; display:inline-block; background: rgb(125,199,254);
+    background: -moz-linear-gradient(left, rgba(125,199,254,1) 0%, rgba(172,92,255,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(125,199,254,1) 0%,rgba(172,92,255,1) 100%);
+    background: linear-gradient(to right, rgba(125,199,254,1) 0%,rgba(172,92,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7dc7fe', endColorstr='#ac5cff',GradientType=1 );
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+ </head>
+ <body>
+		<div class="parkingSituation_new">
+					<p class="tit">
+						<strong>TEST Charts Sample</strong>
+					</p>
+					<ul class="barList">
+						<li>
+							<p class="top">
+								<span class="left">
+									<em>11</em><strong>808,344</strong>
+								</span>
+								<span class="right">
+									<em>22</em><strong>5343</strong>
+								</span>
+							</p>
+							<p class="bar">
+								<span style="width:80%;"></span>
+							</p>
+						</li>
+						
+						<li>
+							<p class="top">
+								<span class="left">
+									<em>33</em><strong>234</strong>
+								</span>
+								<span class="right">
+									<em>44</em><strong>15%</strong>
+								</span>
+							</p>
+							<p class="bar">
+								<span style="width:15%;"></span>
+							</p>
+						</li>
+						
+						<li>
+							<p class="top">
+								<span class="left">
+									<em>55</em><strong>234</strong>
+								</span>
+								<span class="right">
+									<em>666</em><strong>15%</strong>
+								</span>
+							</p>
+							<p class="bar">
+								<span style="width:15%;"></span>
+							</p>
+						</li>
+						
+						<li>
+							<p class="top">
+								<span class="left">
+									<em>77</em><strong>808,344</strong>
+								</span>
+								<span class="right">
+									<em>888</em><strong>56%</strong>
+								</span>
+							</p>
+							<p class="bar">
+								<span style="width:56%;"></span>
+							</p>
+						</li>
+						
+						<li>
+							<p class="top">
+								<span class="left">
+									<em>99</em><strong>234</strong>
+								</span>
+								<span class="right">
+									<em>1010</em><strong>15%</strong>
+								</span>
+							</p>
+							<p class="bar">
+								<span style="width:15%;"></span>
+							</p>
+						</li>
+						
+						<li>
+							<p class="top">
+								<span class="left">
+									<em>111</em><strong>234</strong>
+								</span>
+								<span class="right">
+									<em>1212</em><strong>15%</strong>
+								</span>
+							</p>
+							<p class="bar">
+								<span style="width:15%;"></span>
+							</p>
+						</li>
+					</ul>
+				</div>
+ </body>
+</html>
